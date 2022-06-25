@@ -44,3 +44,4 @@ smw = Game.new(
 )
 smw.save!
 
+# test the api endpoint
