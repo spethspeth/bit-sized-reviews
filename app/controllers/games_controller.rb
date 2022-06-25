@@ -6,4 +6,10 @@ class GamesController < ApplicationController
       @games = Game.all
     end
   end
+
+  def show
+    @game = Game.find(params[:id])
+    @reviews = Review.all
+    @review = Review.new
+  end
 end
