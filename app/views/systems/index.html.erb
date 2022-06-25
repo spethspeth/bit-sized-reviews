@@ -1,3 +1,12 @@
-<% @systems.each do |system| %>
-<p><%= system.name %></p>
-<% end %>
+<div class="cards-wrapper">
+  <div class="cards">
+    <% @systems.each do |system| %>
+    <div class="card nes-container with-title is-centered">
+      <p class="title"><%= system.name %></p>
+      <p><%= system.company %></p>
+      <p><%= system.year %></p>
+      <p><%= link_to "See all #{system.name} games", system_path(system) %></p>
+    </div>
+    <% end %>
+  </div>
+</div>
