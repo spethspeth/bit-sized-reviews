@@ -14,6 +14,20 @@
   <input type="file">
 </label>
 
+ <div class="game-search-bar">
+  <% if user_signed_in? %>
+    <%= form_tag games_path, class: "d-flex mb-3", method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        required: true,
+        class: "nes-field",
+        placeholder: "Search for Games"
+      %>
+      <%= submit_tag "Search", class: "nes-btn is-primary" %>
+    <% end %>
+  <% end %>
+</div>
+
 
 <section class="icon-list">
   <!-- heart -->

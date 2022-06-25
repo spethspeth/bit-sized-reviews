@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   resources :reviews, only: %i[new create show edit update destroy] do
     resources :comments, only: %i[new create edit update destroy]
   end
+
+  resources :games, only: %i[index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
-
 
 # systems: index of systems, no other crud actions (systems are basically static)
 # games: index of games per system, also static (eventually API)
