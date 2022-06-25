@@ -6,11 +6,21 @@
   </div>
 </div>
 <br>
-<div class="nes-container with-title is-centered">
-  <p class="title">Games on <%= @system.name %></p>
-  <ul>
-    <% @games.each do |game| %>
-      <li><%= game.name %></li>
-    <% end %>
-  </ul>
+<div class="container">
+  <div class="nes-container with-title is-centered">
+    <p class="title">Games on <%= @system.name %></p>
+    <ul class="d-flex">
+      <% @games.each do |game| %>
+        <li><%= game.name %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="nes-container with-title is-centered">
+    <p class="title">Options</p>
+    <%= link_to "Back", systems_path %>
+    <%#= link_to "Add a game", new_game_path %>
+  </div>
 </div>
