@@ -1,18 +1,27 @@
-<h1> <%= @game.name %> </h1>
-<div data-controller="reviews">
-  <div data-reviews-target="review">
-    <% unless @game.reviews.nil?%>
-        <% @game.reviews.each do |review| %>
-          <%= render 'review', review: review %>
-        <%end%>
-    <% end %>
-  </div>
+<div class="container">
+  <h1> <%= @game.name %> </h1>
+  <div data-controller="reviews">
+    <div data-reviews-target="review">
+      <% unless @game.reviews.nil?%>
+          <% @game.reviews.each do |review| %>
+            <%= render 'review', review: review %>
+          <%end%>
+      <% end %>
+    </div>
 
-  <div data-controller="newreview">
-    <button type="button" class="nes-btn is-primary" data-action="click->newreview#show">Review</button>
-    <button type="button" class="nes-btn is-error d-none" data-action="click->newreview#hide" data-newreview-target="cancel">Cancel</button>
-    <div data-target="newreview.form reviews.new" class="d-none">
-      <%= render 'reviews/new' %>
+    <div data-controller="newreview">
+      <div class="nes-container with-title is-centered">
+        <p class="title">Options</p>
+        <button type="button" class="nes-btn is-primary" data-action="click->newreview#show">Review</button>
+        <button type="button" class="nes-btn is-error d-none" data-action="click->newreview#hide" data-newreview-target="cancel">Cancel</button>
+        <div data-target="newreview.form reviews.new" class="d-none">
+        <br>
+          <div class="nes-container with-title is-centered">
+            <p class="title">Leave a review</p>
+            <%= render 'reviews/new' %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
