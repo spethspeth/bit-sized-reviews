@@ -1,0 +1,8 @@
+<div class="nes-container is-dark with-title">
+  <p class="title"> <%= review.title %>
+    <% review.rating.times do %>
+      <i class="nes-icon is-small star"></i>
+    <%end%>
+  </p>
+  <p> <%= review.content %> </p>
+</div>

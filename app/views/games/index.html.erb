@@ -1,0 +1,14 @@
+<div class="cards-wrapper">
+  <div class="cards">
+    <% @games.each do |game| %>
+    <div class="card nes-container with-title is-centered">
+      <p class="title"><%= game.name %></p>
+      <p><%= game.year %></p>
+      <p><%= game.developer %></p>
+      <p><%= game.system.name %></p>
+      <p><%= game.system.company %></p>
+      <p><%= link_to "See details", game_path(game)%></p>
+    </div>
+    <% end %>
+  </div>
+</div>

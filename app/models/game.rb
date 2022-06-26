@@ -2,6 +2,7 @@ class Game < ApplicationRecord
   include PgSearch::Model
 
   belongs_to :system
+  has_many :reviews
 
   pg_search_scope :game_search,
                     against: {
