@@ -2,7 +2,7 @@ import { Controller } from "stimulus"
 import { csrfToken } from "@rails/ujs"
 
 export default class extends Controller {
-  static targets = ["review", "form"]
+  static targets = ["review", "form", "new"]
 
   connect() {
     console.log("Hello Stimulus!")
@@ -20,6 +20,7 @@ export default class extends Controller {
     .then(data => {
       if (data.inserted_item) {
         this.reviewTarget.insertAdjacentHTML("beforeend", data.inserted_item)
+        this.newTarget.classList.add("d-none")
       }
     })
   }
