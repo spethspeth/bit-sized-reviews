@@ -2,7 +2,12 @@
   <p class="title"> <%= review.title %>
     <% review.rating.times do %>
       <i class="nes-icon is-small star"></i>
-    <%end%>
+    <% end %>
   </p>
-  <p> <%= review.content %> </p>
+  <div data-controller="editreview">
+    <button type="button" class="nes-btn is-warning" data-action="click->editreview#display">Edit</button>
+    <div data-editreview-target="form" class="d-none">
+      <%= render 'reviews/edit' %>
+    </div>
+  </div>
 </div>

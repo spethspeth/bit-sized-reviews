@@ -1,0 +1,6 @@
+<%= simple_form_for([@game, @review], data: { reviews_target: "form", action: "submit->reviews#send"}) do |f| %>
+  <%= f.input :title, class: "nes-field" %>
+  <%= f.input :content, class: "nes-textarea" %>
+  <%= f.input :rating, class: "nes-select"%>
+  <%= f.button :submit, class: "nes-btn is-primary" %>
+<% end %>

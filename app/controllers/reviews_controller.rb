@@ -21,6 +21,18 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    @review.update(review_params)
+    # Not sure yet where the update should redirect to, I think we decided that reviews should not have a show page,
+    # so i redirected to the game
+    format.html { redirect_to game_path(@review.game) }
+  end
+
   private
 
   def set_game
