@@ -7,12 +7,12 @@ export default class extends Controller {
     console.log("Hello Stimulus")
   }
 
-  showForm() {
+  show() {
     this.formTarget.classList.remove("d-none")
     this.cancelTarget.classList.remove("d-none")
   }
 
-  hideForm() {
+  hide() {
     this.formTarget.classList.add("d-none")
     this.cancelTarget.classList.add("d-none")
   }

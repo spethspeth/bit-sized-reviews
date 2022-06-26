@@ -20,8 +20,8 @@ export default class extends Controller {
     .then(data => {
       if (data.inserted_item) {
         this.reviewTarget.insertAdjacentHTML("beforeend", data.inserted_item)
-        this.newTarget.classList.add("d-none")
       }
     })
+    this.newTarget.classList.toggle("d-none")
   }
 }

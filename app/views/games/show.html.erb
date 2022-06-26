@@ -8,10 +8,10 @@
     <% end %>
   </div>
 
-  <div data-controller="newreview review">
-    <button type="button" class="nes-btn is-primary" data-action="click->newreview#showForm">Review</button>
-    <button type="button" class="nes-btn is-error d-none" data-action="click->newreview#hideForm" data-newreview-target="cancel">Cancel</button>
-    <div data-newreview-target="form" data-review-target="new"  class="d-none">
+  <div data-controller="newreview">
+    <button type="button" class="nes-btn is-primary" data-action="click->newreview#show">Review</button>
+    <button type="button" class="nes-btn is-error d-none" data-action="click->newreview#hide" data-newreview-target="cancel">Cancel</button>
+    <div data-target="newreview.form reviews.new" class="d-none">
       <%= render 'reviews/new' %>
     </div>
   </div>
