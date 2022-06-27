@@ -11,7 +11,7 @@
     <p class="title">Games on <%= @system.name %></p>
     <ul class="homepage-list">
       <% @games.each do |game| %>
-        <li><%= game.name %></li>
+        <li><%= link_to game.name, game_path(game) %></li>
       <% end %>
     </ul>
   </div>
