@@ -2,7 +2,7 @@ import { Controller } from "stimulus"
 import { csrfToken } from "@rails/ujs"
 
 export default class extends Controller {
-  static targets = ["review", "form", "new"]
+  static targets = ["review", "form", "new", "cancel"]
 
   connect() {
     console.log("Hello Stimulus!")
@@ -23,5 +23,6 @@ export default class extends Controller {
       }
     })
     this.newTarget.classList.toggle("d-none")
+    this.cancelTarget.classList.toggle("d-none")
   }
 }
