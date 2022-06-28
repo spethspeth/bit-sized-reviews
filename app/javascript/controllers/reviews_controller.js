@@ -22,6 +22,7 @@ export default class extends Controller {
         this.reviewTarget.insertAdjacentHTML("beforeend", data.inserted_item)
       }
     })
+    this.formTarget.reset()
     this.newTarget.classList.toggle("d-none")
     this.cancelTarget.classList.toggle("d-none")
   }
