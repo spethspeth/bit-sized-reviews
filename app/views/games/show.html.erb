@@ -3,9 +3,9 @@
   <div data-controller="reviews">
     <div data-reviews-target="review">
       <% unless @game.reviews.nil?%>
-          <% @game.reviews.each do |review| %>
-            <%= render 'review', review: review %>
-          <%end%>
+        <% @game.reviews.each do |review| %>
+          <%= render 'review', review: review %>
+        <%end%>
       <% end %>
     </div>
 
