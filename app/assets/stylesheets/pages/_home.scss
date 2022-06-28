@@ -1,1 +1,6 @@
 // Specific CSS for your home-page
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
