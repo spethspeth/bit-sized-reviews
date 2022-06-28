@@ -1,48 +1,32 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<a class="nes-btn" href="#">Normal</a>
-
-<button type="button" class="nes-btn is-primary">Primary</button>
-<button type="button" class="nes-btn is-success">Success</button>
-<button type="button" class="nes-btn is-warning">Warning</button>
-<button type="button" class="nes-btn is-error">Error</button>
-<button type="button" class="nes-btn is-disabled">Disabled</button>
-
-<label class="nes-btn">
-  <span>Select your file</span>
-  <input type="file">
-</label>
-
- <div class="game-search-bar">
-  <% if user_signed_in? %>
-    <%= form_tag games_path, class: "d-flex mb-3", method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        required: true,
-        class: "nes-field",
-        placeholder: "Search for Games"
-      %>
-      <%= submit_tag "Search", class: "nes-btn is-primary" %>
-    <% end %>
-  <% end %>
+<div class="container">
+  <div class="nes-container with-title is-centered">
+    <p class="title">Take a look around!</p>
+    <ul class="homepage-list">
+      <li><%= link_to "Games", games_path %></li>
+      <li><%= link_to "Systems", systems_path %></li>
+    </ul>
+    <div class="game-search-bar d-flex">
+      <% if user_signed_in? %>
+        <%= form_tag games_path, class: "d-flex mb-3", method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            required: true,
+            class: "nes-field",
+            placeholder: " Find anything"
+          %>
+          <%= submit_tag "Search", class: "nes-btn is-primary" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-
-<section class="icon-list">
-  <!-- heart -->
-  <i class="nes-icon is-large heart"></i>
-  <i class="nes-icon is-large is-half heart"></i>
-  <i class="nes-icon is-large is-transparent heart"></i>
-  <i class="nes-icon is-large heart is-empty"></i>
-
-  <!-- star -->
-  <i class="nes-icon is-large star"></i>
-  <i class="nes-icon is-large star is-half"></i>
-  <i class="nes-icon is-large star is-transparent"></i>
-  <i class="nes-icon is-large star is-empty"></i>
-
-  <!-- like -->
-  <i class="nes-icon is-large like"></i>
-  <i class="nes-icon is-large like is-empty"></i>
-</section>
+<br>
+<div class="container">
+  <div class="nes-container with-title is-centered">
+    <p class="title">About this site</p>
+    <p>Made with <i class="nes-icon is-small heart"></i> by the nerds from batch 894. The code is open to anyone who wishes to contribute!</p>
+    <p>The actual purpose of this site is to provide users with a place to rant about games they've played, be they new releases or old classics.</p>
+    <p>Development progress:</p>
+    <progress class="nes-progress is-warning" value="30" max="100"></progress>
+  </div>
+</div>
