@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row mb-3">
+    <div class="col-6">
+      <div class="userinfo nes-container with-title is-centered">
+        <p class="title">User information</p>
+        <h5>Username: <%= @user.user_name %></h5>
+        <h5>Email: <%= @user.email %></h5>
+        <h5>Number of reviews: <%= @user.reviews.length %></h5>
+        <h5>Average review rating: <%= @user.reviews.average(:rating) %></h5>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="userinfo nes-container with-title is-centered">
+        <p class="title">Maybe some other stuff can go here</p>
+        <h5>Some stuff</h5>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 reviewlist">
+      <div class="userinfo nes-container with-title is-centered">
+      <p class="title">User reviews</p>
+      <% @user.reviews.each do |review| %>
+        <div class="nes-container is-dark with-title">
+          <p class="title"> <%= review.title %>
+            <% review.rating.times do %>
+              <i class="nes-icon is-small star"></i>
+            <%end%>
+          </p>
+          <p> <%= review.content %> </p>
+        </div>
+      <% end %>
+      </div>
+    </div>
+    <div class="col-6">
+    <div class="userinfo nes-container with-title is-centered">
+      <p class="title">Other stuff, maybe user comments?</p>
+    </div>
+    </div>
+  </div>
+</div>
