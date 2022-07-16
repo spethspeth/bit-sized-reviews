@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get '/dashboard', to: 'pages#dashboard'
   resources :systems, only: %i[index show]
   # resources :reviews, only: %i[new create show edit update destroy] do
     # resources :comments, only: %i[new create edit update destroy]
