@@ -21,13 +21,16 @@
       <div class="userinfo nes-container with-title is-centered">
       <p class="title">User reviews</p>
       <% @user.reviews.each do |review| %>
-        <div class="nes-container is-dark with-title">
-          <p class="title"> <%= review.title %>
-            <% review.rating.times do %>
-              <i class="nes-icon is-small star"></i>
-            <%end%>
-          </p>
-          <p> <%= review.content %> </p>
+        <div class="nes-container with-title mb-3">
+          <p class="title"><%= link_to review.game.name, game_path(review.game) %></p>
+          <div class="nes-container is-dark with-title mb-3">
+            <p class="title"> <%= review.title %>
+              <% review.rating.times do %>
+                <i class="nes-icon is-small star"></i>
+              <%end%>
+            </p>
+            <p> <%= review.content %> </p>
+          </div>
         </div>
       <% end %>
       </div>
