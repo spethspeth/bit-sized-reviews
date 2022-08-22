@@ -1,6 +1,9 @@
 {
   "name": "bit-sized-reviews",
   "private": true,
+  "engines": {
+    "node": "10.x"
+  },
   "dependencies": {
     "@popperjs/core": "^2.11.5",
     "@rails/actioncable": "^6.0.0",
