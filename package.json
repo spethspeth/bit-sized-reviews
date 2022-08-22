@@ -1,9 +1,6 @@
 {
   "name": "bit-sized-reviews",
   "private": true,
-  "engines": {
-    "node": "10.x"
-  },
   "dependencies": {
     "@popperjs/core": "^2.11.5",
     "@rails/actioncable": "^6.0.0",
@@ -21,5 +18,8 @@
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }
